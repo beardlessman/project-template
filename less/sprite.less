@@ -1,0 +1,63 @@
+/*
+      Sprites list
+*/
+
+@s-logo: 0 70.37037% 0 70.37037% 28px 31px 603.448276% '../img/sprite.png' s-logo;
+
+/* Example */
+@s-checkbox-x: 62px;
+@s-checkbox-y: 17px;
+@s-checkbox-offset-x: -62px;
+@s-checkbox-offset-y: -17px;
+@s-checkbox-width: 17px;
+@s-checkbox-height: 13px;
+@s-checkbox-total-width: 82px;
+@s-checkbox-total-height: 63px;
+@s-checkbox-image: '../img/sprite/sprite.png';
+@s-checkbox-name: s-checkbox;
+@s-checkbox: 62px 17px -62px -17px 17px 13px 82px 63px '../img/sprite/sprite.png' s-checkbox;
+/* /Example */
+
+/*-- __Sprites helper
+------------------------------------------------------------*/
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-size(@sprite) {
+  background-size: extract(@sprite, 7);
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 8);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+  .sprite-size(@sprite);
+}
+
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: extract(@sprite, 9);
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}
