@@ -25,6 +25,9 @@ $(document).on('ready', function () {
         	height: 51
         });
     });
+    $('.j-spoiler').each(function(){
+        new Spoiler(this);
+    });
 });
 
 /* Menu */
@@ -535,3 +538,30 @@ $(document).on('ready', function () {
 	    });
 	};
 /* /Purchase */
+/* /tabs */
+
+/* spoiler */
+	Spoiler = function(container) {
+	    this.container = $(container);
+	    this.head = this.container.find('.j-spoiler-head');
+	    this.body = this.container.find('.j-spoiler-body');
+	    this.close = this.container.find('.j-spoiler-close');
+	    this.init();
+	};
+
+	Spoiler.prototype.init = function() {
+	    var cmp = this;
+	    cmp.body.hide();
+	    cmp.head.on('click', function(e){
+	        e.preventDefault();
+	        var target = $(e.target);
+	        $(this).toggleClass('active');
+	        cmp.body.toggle();    
+	    });
+	    cmp.close.on('click', function(e){
+	        e.preventDefault();
+	        cmp.body.toggle();
+	        cmp.head.toggleClass('active');
+	    });
+	};
+/* /spoiler */
