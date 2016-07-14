@@ -14,6 +14,12 @@ $(document).on('ready', function () {
     $('.j-popup-overlay').each(function(){
         new Popup(this);
     });
+    $('.j-input-num').each(function(){
+        new InputNum(this);
+    });
+    $('.j-purchase').each(function(){
+        new Purchase(this);
+    });
 });
 
 /* Menu */
@@ -445,3 +451,82 @@ $(document).on('ready', function () {
 	    cmp.paddedElem.removeAttr('style');
 	};
 /* /Popup */
+
+/* Input Number +/- */
+	InputNum = function(container){
+	    this.container = $(container);
+	    this.input = this.container.find('.j-input-num__input');
+	    this.minus = this.container.find('.j-input-num__minus');
+	    this.plus = this.container.find('.j-input-num__plus');
+	    this.init();
+	};
+
+	InputNum.prototype.init = function(){
+	    var cmp = this;
+
+	    cmp.minus.on('click', function(e) {
+	        e.preventDefault();
+	        var count = parseInt(cmp.input.val());
+	        if(isNaN(count) || count == 0){
+	            count = 1;
+	        }
+	        else{
+	            count--;
+	        }
+	        count = count < 1 ? 1 : count;
+	        cmp.input.val(count);
+	        cmp.input.change();
+	        return false;
+	    });
+	    cmp.plus.on('click', function(e) {
+	        e.preventDefault();
+	        var count = parseInt(cmp.input.val());
+	        if(isNaN(count) || count == 0){
+	            count = 1;
+	        }
+	        else{
+	            count++;
+	        }
+	        cmp.input.val(count);
+	        cmp.input.change();
+	        return false;
+	    });
+	};
+/* /Input Number +/- */
+
+/* Purchase */
+	Purchase = function(container){
+	    this.container = $(container);
+	    this.num = this.container.find('.j-purchase-num');
+	    this.cost = this.container.find('.j-purchase-cost');
+	    this.res = this.container.find('.j-purchase-result');
+
+	    this.init();
+	};
+
+	Purchase.prototype.init = function(){
+	    var cmp = this;
+
+	    cmp.num.on('input', function () {
+	        var tmp = parseInt(cmp.cost.text(),10)*parseInt(cmp.num.val(),10);
+	        if(isNaN(tmp)){
+	            tmp = 0;
+	        }
+	        if(tmp < 0){
+	            tmp = 0;
+	        }
+	        cmp.res.text(tmp);
+	    });
+
+	    cmp.num.on('change', function () {
+	        var tmp = parseInt(cmp.cost.text(),10)*parseInt(cmp.num.val(),10);
+	        if(isNaN(tmp)){
+	            tmp = 0;
+	        }
+	        if(tmp < 0){
+	            tmp = 0;
+	        }
+	        cmp.res.text(tmp);
+	    });
+	};
+/* /Purchase */

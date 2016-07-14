@@ -6,7 +6,7 @@
   border: none;
   width: 100%;
   text-decoration: none;
-  color: @cTitle;
+  color: @cWhite;
   .transition(~"all .3s ease");
   text-align: center;
   white-space: nowrap;
@@ -24,6 +24,7 @@
     left: 0;
     z-index: 1;
     border-radius: 10px;
+    .transition(~"opacity .3s ease");
   }
   &:after{
     content: "";
@@ -38,6 +39,14 @@
     opacity: 0;
     border-radius: 10px;
     .transition(~"opacity .3s ease");
+  }
+  &:hover {
+    &:before {
+      opacity: 0;
+    }
+    &:after {
+      opacity: 1;
+    }
   }
 
   &__text{
@@ -352,17 +361,16 @@
     cursor: pointer;
     border-radius: 0 8px 8px 0;
     background-color: #b9d03e;
-  background-image: -webkit-linear-gradient(bottom, #a6c523 0%, #e1e574 100%);
-  background-image: -o-linear-gradient(bottom, #a6c523 0%, #e1e574 100%);
-  background-image: linear-gradient(to top, #a6c523 0%, #e1e574 100%);
+    background: @bButton;
     position: relative;
+    .transition(~"all 0.3s ease");
     &:before {
       display: block;
       position: absolute;
       width: 14px;
       height: 2px;
       content: '';
-      background: #404040;
+      background: @cWhite;
       top: 20px;
       left: 16px;
     }
@@ -372,9 +380,12 @@
       width: 2px;
       height: 14px;
       content: '';
-      background: #404040;
+      background: @cWhite;
       top: 14px;
       left: 22px;
+    }
+    &:hover {
+      background: @bButtonOver;
     }
   }
   &__minus {
@@ -387,19 +398,21 @@
     cursor: pointer;
     border-radius: 8px 0 0 8px;
     background-color: #b9d03e;
-  background-image: -webkit-linear-gradient(bottom, #a6c523 0%, #e1e574 100%);
-  background-image: -o-linear-gradient(bottom, #a6c523 0%, #e1e574 100%);
-  background-image: linear-gradient(to top, #a6c523 0%, #e1e574 100%);
+    background: @bButton;
     position: relative;
+    .transition(~"all 0.3s ease");
     &:before {
       display: block;
       position: absolute;
       width: 14px;
       height: 2px;
       content: '';
-      background: #404040;
+      background: @cWhite;
       top: 20px;
       left: 16px;
+    }
+    &:hover {
+      background: @bButtonOver;
     }
   }
   &__value {
