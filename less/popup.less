@@ -15,6 +15,7 @@
   position: relative;
   background: transparent;
   box-sizing: border-box;
+  white-space: normal;
   &-overlay{
     font-size: 0;
     position: fixed;
@@ -36,12 +37,135 @@
       .inline-block();
     }
   }
-  &-close{
-    display: block;
-  }
   &-content{
     position: relative;
     width: 100%;
     background: @cWhite;
+    p{
+      line-height: 22px;
+    }
+  }
+  padding: 21px 25px 56px;
+  width: 100%;
+  position: relative;
+
+  &__title {
+    .fontPTS(24px, 33px, 700);
+    color: @cTitle;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    padding-right: 35px;
+  }
+
+  &-login{
+    margin-top: -6px;
+    .form{
+      &__label{
+        display: block;
+        margin-bottom: 5px;
+      }
+      &-field{
+        margin-bottom: 15px;
+        &--checkbox{
+          margin-bottom: 7px;
+        }
+      }
+      &__full-fill{
+        margin: 15px 0 -9px;
+      }
+    }
+  }
+
+  &__close {
+    display: block;
+    position: absolute;
+    .sprite(@s-close);
+    top: 23px;
+    right: 24px;
+    text-indent: -9999px;
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .popup{
+    background: @cWhite;
+    border-radius: 10px;
+    width: 293px;
+    padding: 0 0 20px;
+    margin: 30px 0;
+    &--registration{
+      width: 337px;
+    }
+    &--purchase{
+      width: 627px;
+    }
+    &__title{
+      display: block;
+      width: 100%;
+      height: 37px;
+      background: @cGreen;
+      color: @cWhite;
+      border-radius: 10px 10px 0 0;
+      padding: 5px 28px 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+      margin-bottom: 16px;
+    }
+    &--purchase &__title{
+      font-size: 18px;
+    }
+    &__close{
+      top: 12px;
+      right: 17px;
+      .sprite(@s-close-white);
+    }
+    &-content{
+      margin: 0 28px 0;
+      width: auto;
+    }
+    &-login{
+      margin: 30px 28px 11px;
+      .form{
+        &__label--checkbox{
+          padding-left: 25px !important;
+        }
+      }
+    }
+  }
+  .overlay{
+    background: @cOverlay;
+  }
+}
+
+@media screen and (min-width: 1025px){
+  .popup{
+    width: 396px;
+    &--registration{
+      width: 476px;
+      .form{
+        &__button{
+          width: 180px;
+        }
+      }
+      .control{
+        &-field{
+          &__left{
+            width: 185px;
+          }
+        }
+      }
+    }
+    &--purchase{
+      width: 627px;
+    }
+    &-login{
+      margin: 23px 28px 16px;
+      .form{
+        &__full-fill{
+          margin: -9px 0 18px;
+        }
+      }
+    }
   }
 }

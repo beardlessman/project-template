@@ -9,8 +9,133 @@
     <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
+    
+    <div class="popup-overlay j-popup-overlay" id="popup-enter">
+        <div class="popup">
+            <a href="#" class="popup__close j-close-popup">close</a>
+            <h1 class="popup__title">Вход</h1>
+            <div class="popup-login">
+                <form>
+                    <div class="control-field">
+                        <div class="control-field__left">
+                            <label for="loginMail" class="form__label">Ваш E-mail</label>
+                        </div>
+                        <div class="control-field__right">
+                            <input id="loginMail" type="text" class="form__input">
+                        </div>
+                    </div>
+                    <div class="control-field">
+                        <div class="control-field__left">
+                            <label for="loginPass" class="form__label">Пароль</label>
+                        </div>
+                        <div class="control-field__right">
+                            <input id="loginPass" type="password" class="form__input">
+                        </div>
+                    </div>
+                    <div class="control-field">
+                        <div class="control-field__left"></div>
+                        <div class="control-field__right">
+                            <div class="form__links">
+                                <a href="#" class="form__link form__forget-pass">Забыли пароль?</a> / <a href="#" class="form__link form__registration j-change-popup" rel="popup-registration">Регистрация</a>
+                            </div>
+                            <input type="checkbox" id="remember" class="form__input form__input--checkbox">
+                            <label for="remember" class="form__label form__label--checkbox">Запомнить меня</label>
+                        </div>
+                    </div>
+                    <button class="button button--small form__button" type="button">Войти</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay j-popup-overlay" id="popup-registration">
+        <div class="popup popup--registration">
+            <a href="#" class="popup__close j-close-popup">close</a>
+            <h1 class="popup__title">Регистрация</h1>
+            <div class="popup-login">
+                <form>
+                    <div class="control-field">
+                        <div class="control-field__left">
+                            <label for="mail" class="form__label">Ваш E-mail *</label>
+                        </div>
+                        <div class="control-field__right">
+                            <input id="mail" type="text" class="form__input">
+                        </div>
+                    </div>
+                    <div class="control-field">
+                        <div class="control-field__left">
+                            <label for="pass" class="form__label">Пароль *</label>
+                        </div>
+                        <div class="control-field__right">
+                            <input id="pass" type="password" class="form__input _error">
+                        </div>
+                    </div>
+                    <div class="control-field">
+                        <div class="control-field__left">
+                            <label for="repass" class="form__label">Повторите пароль *</label>
+                        </div>
+                        <div class="control-field__right">
+                            <input id="repass" type="password" class="form__input _error">
+                        </div>
+                    </div>
+                    <div class="control-field">
+                        <div class="control-field__left">
+                            <label for="name" class="form__label">Ваше имя *</label>
+                        </div>
+                        <div class="control-field__right">
+                            <input id="name" type="text" class="form__input">
+                        </div>
+                    </div>
+                    <div class="control-field">
+                        <div class="control-field__left">
+                            <label for="city" class="form__label">Город</label>
+                        </div>
+                        <div class="control-field__right">
+                            <input id="city" type="text" class="form__input">
+                        </div>
+                    </div>
+                    <div class="control-field">
+                        <div class="control-field__left">
+                            <label for="phone" class="form__label">Мобильный телефон</label>
+                        </div>
+                        <div class="control-field__right">
+                            <input id="phone" type="text" class="form__input">
+                        </div>
+                    </div>
+                    <div class="form-field form-field--full form-field--checkbox">
+                        <input type="checkbox" id="notification" class="form__input form__input--checkbox">
+                        <label for="notification" class="form__label form__label--checkbox">Получать уведомления о новых предложениях по почте</label>
+                    </div>
+                    <div class="form-field form-field--full form-field--checkbox">
+                        <input type="checkbox" id="oferta" class="form__input form__input--checkbox">
+                        <label for="oferta" class="form__label form__label--checkbox">Я принимаю  условия <a href="#" class="form__label-link">Оферты</a> *</label>
+                    </div>
+                    <span class="form__full-fill">* обязательные для заполнения поля</span>
+                    <button class="button button--small form__button" type="submit">Регистрация</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
     <div class="page">
         <header class="header">
+            <div class="header-inner">
+                <a href="#" class="logo">Project Template</a>
+                <div class="header-buttons">
+                    <div class="header-buttons-column">
+                        <a href="#" class="button header__login j-popup-link" rel="popup-enter">
+                            <span class="button__text">Вход</span>
+                        </a>
+                    </div>
+                    <div class="header-buttons-column">
+                        <a href="#" class="button header__registration j-popup-link" rel="popup-registration">
+                            <span class="button__text">Регистрация</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
             <!-- menu -->
             <nav class="menu">
                 <div class="menu__inner j-menu">
@@ -442,8 +567,6 @@
 
             <!-- menuBurger-3 http://www.flashuser.net/responsive-flat-menu-tutorial -->
             <!-- /menuBurger-3 -->
-        </header>
-
 
         <section class="content">
             <!-- TABS -->
@@ -786,10 +909,11 @@
     </div>
 
     <footer class="footer">
-
     </footer>
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/function.js"></script>
+
 </body>
 </html>
