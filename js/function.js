@@ -2,6 +2,15 @@ $(document).on('ready', function () {
     $('.j-menu').each(function () {
         new Menu(this);
     });
+    $('.j-tabs-container').each(function(){
+        new Tabs(this);
+    });
+    $('.j-changedInput-container').each(function(){
+        new ChangedFormInput(this);
+    });
+    $('.j-rowToHide').each(function(){
+        new RowToHide(this);
+    });
 });
 
 /* Menu */
@@ -191,6 +200,29 @@ $(document).on('ready', function () {
 	};
 /* /Menu */
 
+/* tabs */
+
+	Tabs = function(container) {
+	    this.container = $(container);
+	    this.tabsCollection = this.container.find('.j-tab');
+	    this.tabsBlocksCollection = this.container.find('.j-tabs-body');
+	    this.init();
+	};
+
+	Tabs.prototype.init = function() {
+	    var cmp = this;
+	    cmp.tabsCollection.bind('click.tab', function(e){
+	        e.preventDefault();
+	        if(!$(this).hasClass('active')) {
+	            cmp.tabsCollection.removeClass('active');
+	            $(this).addClass('active');
+	            cmp.tabsBlocksCollection.hide();
+	            $('#' + $(this).attr('data-id')).fadeIn(300);
+	        }
+	    });
+	};
+/* /tabs */
+
 /* get scrollbar width */
 	GetScrollBarWidth = function() {
 	    var inner = document.createElement('p');
@@ -218,3 +250,70 @@ $(document).on('ready', function () {
 	    return (w1 - w2);
 	};
 /* /get scrollbar width */
+
+/* ChangedFormInput */
+	ChangedFormInput = function(container){
+	    this.container = $(container);
+	    this.input = this.container.find('.j-changed-input');
+	    this.link = this.container.find('.j-changed-link');
+	    this.text = this.container.find('.j-changed-text');
+	    
+	    this.init();
+	};
+	ChangedFormInput.prototype.init = function() {
+	    var cmp = this;
+	    
+	    if(cmp.container.hasClass('_filled')) {
+	        cmp.input.hide();
+	    } else {
+	        cmp.link.hide();
+	        cmp.text.hide();
+	    }
+
+	    cmp.link.on('click', function(e){
+	        e.preventDefault();
+	        var target = $(e.target);
+	        if(target.hasClass('cancel')) {
+	            cmp.container.addClass('_filled');
+	            cmp.text.toggle();
+	            cmp.input.toggle();
+	            cmp.link.text("Изменить").removeClass('cancel');    
+	        } else {
+	            cmp.container.removeClass('_filled');
+	            cmp.text.toggle();
+	            cmp.input.toggle().focus();
+	            cmp.link.text("Отменить").addClass('cancel');
+	        }
+	    });
+	    
+	};
+/* /ChangedFormInput */
+
+/* Row To Hide */
+	RowToHide = function(container){
+	    this.container = $(container);
+	    this.delBtn = this.container.find('.j-rowToHide-delete');
+
+	    this.init();
+	};
+
+	RowToHide.prototype.init = function(){
+	    var cmp = this;
+
+	    cmp.delBtn.on('click', function (e) {
+	        e.preventDefault();
+	        TweenMax.to(cmp.container,
+	            0.3,
+	            {
+	                height: 0,
+	                delay: 0,
+	                ease: Power2.easeOut,
+	                onComplete: function () {
+	                    cmp.container.remove();
+	                }
+	            }
+	        );
+	    });
+	};
+
+/* /Row To Hide */

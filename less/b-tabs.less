@@ -1,0 +1,294 @@
+.my-cupons {
+	margin: 25px 0 60px;
+	&__head {
+		padding: 0 25px;
+		box-sizing: border-box;
+		border-bottom: 1px solid @cBorder;
+		font-size: 0;
+		white-space: nowrap;
+	}
+	&__tab {
+		.fontPTS(16px, 44px, 700);
+		text-transform: uppercase;
+		text-decoration: none;
+		height: 40px;
+		display: inline-block;
+		padding: 0 15px;
+		box-sizing: border-box;
+		border: 1px solid @cBorder;
+		vertical-align: bottom;
+		position: relative;
+		top: 1px;
+		z-index: 1;
+		background: @cGrayF9;
+		color: @cGray9B;
+		.transition(~'all 0.3s ease');
+		border-radius: 10px 10px 0 0;
+		margin-right: 4px;
+		
+		&.active {
+			color: @cGreenDark;
+			border-bottom: 1px solid @cWhite;
+			background: @cWhite;
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+.cupon-item {
+	position: relative;
+	overflow: hidden;
+	border-bottom: 1px solid @cBorder;
+	&__head {
+		padding: 13px 25px 15px;
+		border-bottom: 1px solid @cBorder;
+		height: 91px;
+		box-sizing: border-box;
+	}
+	&__delete{
+		position: absolute;
+		width: 19px;
+		height: 19px;
+		text-indent: -9999px;
+		top: 18px;
+		right: 24px;
+		opacity: 1;
+		.transition(~'opacity 0.3s ease');
+		.sprite(@s-close);
+	}
+	&__number {
+		.fontPTS(30px, 42px, 700);
+		color: @cTitle;
+		display: block;
+		margin-bottom: 2px;
+	}
+	&__text {
+		display: block;
+		.fontPTS(14px, 18px, 400);
+		color: @cText;
+	}
+	&__status {
+		margin-top: 23px;
+	}
+	&__button{
+		font-size: 14px;
+	}
+	&__element{
+		padding: 18px 0 23px;
+		border-bottom: 1px solid @cLiteLine;
+		&:first-child{
+			padding-top: 0;
+		}
+		&:last-child{
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+	}
+}
+.cupon-info {
+	width: 100%;
+	display: block;
+	padding: 18px 25px 45px 25px;
+	box-sizing: border-box;
+	&__row {
+		display: block;
+		font-size: 0;
+	}
+	&__cell {
+		.inline-block(top);
+		padding: 8px 0 11px;
+	}
+	&__key {
+		.fontPTS(14px, 17px, 700);
+		width: 47%;
+	}
+	&__value {
+		.fontPTS(14px, 17px, 400);
+		width: 52%;
+	}
+	&__button {
+		background: #e5f08a;
+		font-size: 14px;
+		height: 30px;
+		line-height: 31px;
+		width: 120px;
+	}
+}
+
+.my-data {
+	padding: 19px 25px 45px 25px;
+	&__change {
+		.fontPTS(14px, 17px, 700);
+		color: @cTitle;
+		display: block;
+		margin-bottom: 13px;
+	}
+	&__form {
+		font-size: 14px;
+	}
+}
+
+.cupon{
+	&__thead{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	.my-cupons{
+		margin: 29px 0 100px;
+		&__head{
+			margin: 0 28px;
+			padding: 0;
+		}
+		&__tab{
+			font-size: 18px;
+			padding: 0 24px;
+		}
+	}
+	.my-data{
+		padding: 28px 28px 30px;
+		&__change{
+			margin-bottom: 20px;
+		}
+	}
+
+	.cupon{
+		&__thead{
+			display: block;
+			font-size: 0;
+			border-bottom: 1px solid @cLine;
+			margin: 13px 28px 0;
+			&__cell{
+				.inline-block();
+				.fontPTS(14px, 17px, 700);
+				color: @cText;
+				padding: 14px 0 14px;
+			}
+			&__num{
+				width: 119px;
+			}
+			&__name{
+				width: 231px;
+			}
+			&__coupon{
+				width: 138px;
+			}
+			&__code{
+				width: 148px;
+			}
+			&__sum{
+				width: 103px;
+			}
+			&__operations{
+				width: 173px;
+			}
+		}
+		&-item{
+			margin: 0 28px;
+            &__link{
+                color: @cBlack;
+                text-decoration: none;
+            }
+			&__head{
+				padding: 26px 0 26px;
+				margin: 0 0;
+				position: relative;
+				z-index: 1;
+				.inline-block();
+				border-bottom: 0;
+				width: 119px;
+				height: auto;
+			}
+			&__number{
+				font-size: 14px;
+				line-height: 17px;
+				padding-top: 2px;
+			}
+			&__text{
+				display: none;
+			}
+			&__delete{
+				right: 12px;
+				top: 50%;
+				margin-top: -7px;
+				width: 13px;
+				height: 13px;
+				&:before{
+					width: 13px;
+					height: 13px;
+					background-size: 100%;
+				}
+			}
+			&__info{
+				.inline-block(top);
+				width: 793px;
+				padding: 27px 0 28px;
+			}
+			&__button{
+				height: 30px;
+				line-height: 31px;
+			}
+			&__status{
+				.inline-block();
+				width: 125px;
+				margin: 0;
+			}
+			&__element{
+				padding: 27px 0 28px;
+				border-bottom: 1px solid @cLiteLine;
+				&:first-child{
+					padding-top: 0;
+				}
+				&:last-child{
+					padding-bottom: 0;
+					border-bottom: 0;
+				}
+				&s{
+					.inline-block();
+					width: 620px;
+					box-sizing: border-box;
+					padding-right: 40px;
+				}
+			}
+			&--multiple{
+				.cupon-item__info{
+					vertical-align: middle;
+				}
+			}
+		}
+		&-info{
+			&__row{
+				.inline-block();
+				&--offer{
+					width: 231px;
+					box-sizing: border-box;
+					padding-right: 30px;
+				}
+				&--coupon{
+					width: 138px;
+					padding-top: 1px;
+				}
+				&--code{
+					width: 148px;
+					padding-top: 1px;
+				}
+				&--sum{
+					width: 63px;
+					padding-top: 2px;
+				}
+			}
+			&__cell{
+				display: block;
+			}
+			&__key{
+				display: none;
+			}
+			&__value{
+				padding: 0;
+				width: 100%;
+			}
+		}
+	}
+}

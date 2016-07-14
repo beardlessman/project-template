@@ -224,7 +224,7 @@
             </nav>
             <!-- /menu -->
 
-            <!-- menuBurger -->
+            <!-- menuBurger не сделано
             <nav class="menuBurger">
                 <div class="menuBurger__inner j-menuBurger">
                     <div class="menuBurger__row menuBurger__row--desktop">
@@ -435,12 +435,350 @@
                     </div>
                 </div>
             </nav>
-            <!-- /menuBurger -->
+            /menuBurger -->
+
+            <!-- menuBurger-2 http://slicknav.com/ -->
+            <!-- /menuBurger-2 http://slicknav.com/ -->
+
+            <!-- menuBurger-3 http://www.flashuser.net/responsive-flat-menu-tutorial -->
+            <!-- /menuBurger-3 -->
         </header>
 
 
         <section class="content">
+            <!-- TABS -->
+            <div class="my-cupons j-tabs-container tabs">
+                <div class="my-cupons__head">
+                    <a href="#" class="my-cupons__tab active j-tab" data-id="tab1">Мои купоны</a>    
+                    <a href="#" class="my-cupons__tab j-tab" data-id="tab2">Мои данные</a>
+                </div>
+                <div class="j-tabs-body my-cupons__cupons-list" id="tab1">
+                    <div class="cupon__thead">
+                        <div class="cupon__thead__cell cupon__thead__num">Номер заказа</div>
+                        <div class="cupon__thead__cell cupon__thead__name">Предложение</div>
+                        <div class="cupon__thead__cell cupon__thead__coupon">Купон</div>
+                        <div class="cupon__thead__cell cupon__thead__code">Код по SMS</div>
+                        <div class="cupon__thead__cell cupon__thead__sum">Стоимость</div>
+                        <div class="cupon__thead__cell cupon__thead__operations">Операции</div>
+                    </div>
+                    <div class="cupon-item j-rowToHide">
+                        <div class="cupon-item__head">
+                            <span class="cupon-item__number">0000354859</span>
+                            <span class="cupon-item__text">Номер заказа</span>   
+                        </div>
+                        <div class="cupon-item__info cupon-info">
+                            <div class="cupon-item__elements">
+                                <div class="cupon-item__element">
+                                    <div class="cupon-info__row cupon-info__row--offer">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Предложение
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            <a class="cupon-item__link" href="#">День рождения ребенка в клубе «GeekON» со скидкой ...</a>
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--coupon">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Купон
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
 
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--code">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Код по SMS
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--sum">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Стоимость
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            250 руб.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cupon-item__status">
+                                <a href="#" class="button cupon-item__button"><span class="button__text">Оплатить</span></a>
+                            </div>
+                        </div>
+                        <a href="#" class="cupon-item__delete j-rowToHide-delete">Удалить</a>
+                    </div>
+                    <div class="cupon-item j-rowToHide">
+                        <div class="cupon-item__head">
+                            <span class="cupon-item__number">0000355856</span>
+                            <span class="cupon-item__text">Номер заказа</span>   
+                        </div>
+                        <div class="cupon-item__info cupon-info">
+                            <div class="cupon-item__elements">
+                                <div class="cupon-item__element">
+                                    <div class="cupon-info__row cupon-info__row--offer">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Предложение
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            <a class="cupon-item__link" href="#">Любая стрижка со скидкой 60% в парикмахерской ...</a>
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--coupon">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Купон
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--code">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Код по SMS
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--sum">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Стоимость
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            50 руб.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cupon-item__status">
+                                <div class="button cupon-item__button button--process"><span class="button__text">В обработке</span></div>
+                            </div>
+                        </div>
+                        <a href="#" class="cupon-item__delete j-rowToHide-delete">Удалить</a>
+                    </div>
+                    <div class="cupon-item j-rowToHide">
+                        <div class="cupon-item__head">
+                            <span class="cupon-item__number">0000356081</span>
+                            <span class="cupon-item__text">Номер заказа</span>   
+                        </div>
+                        <div class="cupon-item__info cupon-info">
+                            <div class="cupon-item__elements">
+                                <div class="cupon-item__element">
+                                    <div class="cupon-info__row cupon-info__row--offer">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Предложение
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            <a class="cupon-item__link" href="#">Воспоминания бесценны! Фотопечать фотографий со ск... </a>
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--coupon">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Купон
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            <a href="#" class="button cupon-info__button">Посмотреть</a>
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--code">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Код по SMS
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            <a href="#" class="button cupon-info__button">Получить</a>
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--sum">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Стоимость
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            50 руб.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cupon-item__status">
+                                <div class="button cupon-item__button button--done"><span class="button__text">Выполнен</span></div>
+                            </div>
+                        </div>
+                        <a href="#" class="cupon-item__delete j-rowToHide-delete">Удалить</a>
+                    </div>
+                    <div class="cupon-item cupon-item--multiple j-rowToHide">
+                        <div class="cupon-item__head">
+                            <span class="cupon-item__number">0000356083</span>
+                            <span class="cupon-item__text">Номер заказа</span>
+                        </div>
+                        <div class="cupon-item__info cupon-info">
+                            <div class="cupon-item__elements">
+                                <div class="cupon-item__element">
+                                    <div class="cupon-info__row cupon-info__row--offer">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Предложение
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            <a class="cupon-item__link" href="#">Услуги по ремонту ноутбуков cо скидкой 60%</a>
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--coupon">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Купон
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--code">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Код по SMS
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--sum">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Стоимость
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            100 руб.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cupon-item__element">
+                                    <div class="cupon-info__row cupon-info__row--offer">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Предложение
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            <a class="cupon-item__link" href="#"> Услуги по ремонту ноутбуков cо скидкой 60%</a>
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--coupon">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Купон
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--code">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Код по SMS
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--sum">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Стоимость
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            100 руб.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cupon-item__status">
+                                <a href="#" class="button cupon-item__button"><span class="button__text">Оплатить</span></a>
+                            </div>
+                        </div>
+                        <a href="#" class="cupon-item__delete j-rowToHide-delete">Удалить</a>
+                    </div>
+                    <div class="cupon-item j-rowToHide">
+                        <div class="cupon-item__head">
+                            <span class="cupon-item__number">0000354859</span>
+                            <span class="cupon-item__text">Номер заказа</span>
+                        </div>
+                        <div class="cupon-item__info cupon-info">
+                            <div class="cupon-item__elements">
+                                <div class="cupon-item__element">
+                                    <div class="cupon-info__row cupon-info__row--offer">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Предложение
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            <a class="cupon-item__link" href="#">День рождения ребенка в клубе «GeekON» со скидкой ...</a>
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--coupon">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Купон
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--code">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Код по SMS
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+
+                                        </div>
+                                    </div>
+                                    <div class="cupon-info__row cupon-info__row--sum">
+                                        <div class="cupon-info__cell cupon-info__key">
+                                            Стоимость
+                                        </div>
+                                        <div class="cupon-info__cell cupon-info__value">
+                                            250 руб.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cupon-item__status">
+                                <a href="#" class="button cupon-item__button"><span class="button__text">Оплатить</span></a>
+                            </div>
+                        </div>
+                        <a href="#" class="cupon-item__delete j-rowToHide-delete">Удалить</a>
+                    </div>
+                </div>
+                <div class="j-tabs-body my-data" id="tab2" style="display: none;">
+                    <span class="my-data__change">Здесь Вы можете изменить свои личные данные.</span>
+                    <form class="my-data__form form">
+                        <div class="form-field form-field--single j-changedInput-container _filled">
+                            <label for="email" class="form__label">
+                                E-mail 
+                            </label>
+                            <span class="form__filled-input j-changed-text">postyler@gmail.com</span>
+                            <a href="#" class="form__change j-changed-link">Изменить</a>
+                            <input id="email" type="text" class="form__input j-changed-input">
+                        </div>
+                        <div class="form-field">
+                            <label for="pass" class="form__label">Пароль</label>
+                            <input id="pass" type="text" class="form__input">
+                        </div>
+                        <div class="form-field">
+                            <label for="repass" class="form__label">Повторите пароль</label>
+                            <input id="repass" type="text" class="form__input">
+                        </div>
+                        <div class="form-field">
+                            <label for="name" class="form__label">Ваше имя*</label>
+                            <input id="name" type="text" class="form__input">
+                        </div>
+                        <div class="form-field">
+                            <label for="city" class="form__label">Город</label>
+                            <input id="city" type="text" class="form__input">
+                        </div>
+                        <div class="form-field">
+                            <label for="phone" class="form__label">Мобильный телефон</label>
+                            <input id="phone" type="tel" class="form__input">
+                        </div>
+                        <div class="form-field form-field--checkbox">
+                            <input type="checkbox" id="notify" class="form__input form__input--checkbox">
+                            <label for="notify" class="form__label form__label--checkbox">Получать уведомления о новых предложениях по почте</label>
+                        </div>
+                        <span class="form__full-fill">* обязательные для заполнения поля</span>
+                        <div class="form-field">
+                            <button class="button button--small" type="submit"><span class="button__text">Сохранить</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /TABS -->
         </section>
 
 

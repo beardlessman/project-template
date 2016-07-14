@@ -1,23 +1,543 @@
+.button{
+  display: block;
+  height: 35px;
+  background: @bButton;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  text-decoration: none;
+  color: @cTitle;
+  .transition(~"all .3s ease");
+  text-align: center;
+  white-space: nowrap;
+  .fontPTS(18px, 36px, 400);
+  position: relative;
+
+  &:before{
+    content: "";
+    display: block;
+    background: @bButton;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 10px;
+  }
+  &:after{
+    content: "";
+    display: block;
+    background: @bButtonOver;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    border-radius: 10px;
+    .transition(~"opacity .3s ease");
+  }
+
+  &__text{
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+  }
+
+  &--vk {
+    height: 43px;
+    border-radius: 5px;
+    color: @cWhite;
+    background: @cBlueVK;
+    position: relative;
+
+    &:before {
+      display: block;
+      width: 26px;
+      height: 26px;
+      content: "";
+      background: url("../img/vk.png");
+      position: absolute;
+      top: 9px;
+      left: 11px;
+    }
+  }
+  &--vk &__text{
+    position: relative;
+    left: 15px;
+    top: 2px;
+  }
+  &--process {
+    background: #f2f2f2;
+    position: relative;
+    .button__text {
+      position: relative;
+      padding-left: 22px;
+      &:before {
+        display: block;
+        width: 16px;
+        height: 16px;
+        content: "";
+        background: url("../img/process.png");
+        position: absolute;
+        top: 8px;
+        left: -5px;
+      }  
+    }
+  }
+  &--done {
+    background: #f2f2f2;
+    position: relative;
+    .button__text {
+      position: relative;
+      padding-left: 24px;
+      &:before {
+        display: block;
+        width: 13px;
+        height: 9px;
+        content: "";
+        background: url("../img/done.png");
+        position: absolute;
+        top: 12px;
+        left: -2px;
+      }  
+    }
+  }
+
+  &--small{
+    font-size: 14px;
+    line-height: 34px;
+  }
+}
+
+.form {
+  &__label {
+    display: inline-block;
+    .fontPTS(14px, 17px, 400);
+    color: @cTitle;
+    margin-bottom: 11px;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    height: 33px;
+    .fontPTS(14px, 33px, 400);
+    color: @cTitle;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid @cBorder;
+    &--checkbox {
+      display: inline-block;
+    }
+    &:focus {
+      background-color: @cBGGray;
+    }
+    &._error{
+      border-color: @cError;
+    }
+  }
+  &__full-fill {
+    .fontPTS(14px, 33px, 400);
+    color: #9c9c9c;
+    display: block;
+    margin: 0 0 16px;
+  }
+  &__input-container {
+    position: relative;
+  }
+  &__change {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #9aa936;
+    text-decoration: none;
+    /*&:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      text-decoration: underline;
+    }*/
+  }
+  &__filled-input {
+    position: absolute;
+    top: 0;
+    left: 66px;
+    right: 66px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-field {
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+    &--checkbox {
+      padding-top: 9px;
+      margin-bottom: 7px;
+    }
+  }
+
+  &__links {
+    .fontPTS(14px, 20px, 400);
+    color: #9c9c9c;
+    margin-top: 17px;
+    margin-bottom: 14px;
+  }
+  &__link {
+    .fontPTS(14px, 20px, 400);
+    color: #9c9c9c;
+    text-decoration: none;
+  }
+  &__button {
+    margin-top: 27px;
+  }
+  &__input-container {
+    position: relative;
+  }
+  &__label-link {
+    color: #95b412;
+    text-decoration: none;
+  }
+}
+
+.error {
+  position: relative;
+  border-color :#ff4747;
+}
+.error-message {
+  position: absolute;
+  bottom: 4px;
+  left: 10px;
+  color: #ff4747;
+}
+
 .control{
   &-field{
-
-  }
-  &__input{
-
-  }
-  &__label{
-
+    margin-bottom: 15px;
   }
 }
 
-.button{
-
+@media screen and (min-width: 768px) {
+  .form{
+    &__links{
+      margin: 23px 0 7px;
+    }
+    &__button{
+      margin-top: 24px;
+    }
+  }
 }
 
-@media screen and (min-width: 600px) {
-
+@media screen and (min-width: 1025px) {
+  .btn{
+    &:hover{
+      color: @cButtonTextOver;
+      &:after{
+        opacity: 1;
+      }
+    }
+    &._filled{
+      margin-bottom: -1px;
+    }
+  }
 }
 
-@media screen and (min-width: 1000px) {
 
+.spoiler {
+  .fontPTS(14px, 20px, 400);
+  color: @cTitle;
+  margin: 13px 0;
+  &--head {
+    color: #92a21a;
+    text-decoration: none;
+    border-bottom: 1px dashed #b1cb32;
+  }
+  &--body {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 7px 20px;
+    position: relative;
+    margin-top: 10px;
+  }
+  &--close {
+    position: absolute;
+    right: 13px;
+    top: 15px;
+    .fontPTS(12px, 20px, 400);
+    color: #3a3a3a !important;
+    text-decoration: none;
+    padding-right: 16px;
+    &:after {
+      width: 7px;
+      height: 8px;
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: 2px;
+      content: "";
+      background: url('../img/close-spoiler.png');
+    }
+  }
+}
+
+
+/* checkbox style */
+
+.form__input--checkbox {
+  vertical-align: top;
+  margin: 0 3px 0 0;
+  width: 13px;
+  height: 13px;
+}
+
+.form__input--checkbox + .form__label--checkbox {
+  cursor: pointer;
+  .fontPTS(14px, 17px, 400);
+  color: #9c9c9c;
+}
+
+.form__input--checkbox:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.form__input--checkbox:not(checked) + .form__label--checkbox {
+  position: relative; 
+  padding: 0 0 0 30px;
+}
+
+.form__input--checkbox + .form__label--checkbox:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #d7d7d7;
+}
+
+.form__input--checkbox:not(checked) + .form__label--checkbox:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 12px;
+  height: 10px;
+  box-sizing: border-box;
+  background: url('../img/check.png');
+  opacity: 0;
+  transition: all .2s;
+}
+
+.form__input--checkbox:checked + label:after {
+  opacity: 1;
+}
+
+/* plus-minus input number */
+
+.num {
+  font-size: 0 !important;
+  white-space: nowrap;
+  &__plus {
+    .fontPTS(14px, 17px, 400);
+    display: inline-block;
+    vertical-align: middle;
+    width: 47px;
+    height: 42px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    background-color: #b9d03e;
+  background-image: -webkit-linear-gradient(bottom, #a6c523 0%, #e1e574 100%);
+  background-image: -o-linear-gradient(bottom, #a6c523 0%, #e1e574 100%);
+  background-image: linear-gradient(to top, #a6c523 0%, #e1e574 100%);
+    position: relative;
+    &:before {
+      display: block;
+      position: absolute;
+      width: 14px;
+      height: 2px;
+      content: '';
+      background: #404040;
+      top: 20px;
+      left: 16px;
+    }
+    &:after {
+      display: block;
+      position: absolute;
+      width: 2px;
+      height: 14px;
+      content: '';
+      background: #404040;
+      top: 14px;
+      left: 22px;
+    }
+  }
+  &__minus {
+    .fontPTS(14px, 17px, 400);
+    display: inline-block;
+    vertical-align: middle;
+    width: 47px;
+    height: 42px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 8px 0 0 8px;
+    background-color: #b9d03e;
+  background-image: -webkit-linear-gradient(bottom, #a6c523 0%, #e1e574 100%);
+  background-image: -o-linear-gradient(bottom, #a6c523 0%, #e1e574 100%);
+  background-image: linear-gradient(to top, #a6c523 0%, #e1e574 100%);
+    position: relative;
+    &:before {
+      display: block;
+      position: absolute;
+      width: 14px;
+      height: 2px;
+      content: '';
+      background: #404040;
+      top: 20px;
+      left: 16px;
+    }
+  }
+  &__value {
+    display: inline-block;
+    vertical-align: middle;
+    .fontPTS(16px, 20px, 400);
+    width: 60px;
+    height: 42px;
+    box-sizing: border-box;
+    border: none;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    text-align: center;
+    border-radius: 0;
+  }
+}
+
+/* /plus-minus input number */
+
+@media screen and (min-width: 1025px) {
+  .btn{
+    &:hover{
+      color: @cButtonTextOver;
+      &:after{
+        opacity: 1;
+      }
+    }
+  }
+
+  .form{
+    &-field{
+      .inline-block(top);
+      width: 284px;
+      margin-right: 20px;
+      margin-bottom: 30px;
+      &--single{
+        display: block;
+      }
+      &--checkbox{
+        padding-top: 30px;
+      }
+      &._filled{
+        margin-bottom: 10px;
+      }
+      .button{
+        width: auto;
+        padding: 0 40px;
+      }
+      &--full{
+        width: 100%;
+        margin: 0 0 8px !important;
+        padding: 0;
+      }
+    }
+    &__full-fill{
+      margin: -23px 0 23px;
+    }
+    &__links{
+      margin: -2px 0 3px;
+    }
+    &__button{
+      width: 150px;
+      margin: 17px auto 0;
+    }
+  }
+
+  .button{
+    &--done{
+      .button__text{
+        padding-left: 10px;
+        &:before{
+          top: 10px;
+          left: -11px;
+        }
+      }
+    }
+    &--process{
+      .button__text{
+        padding-left: 18px;
+        &:before{
+          top: 7px;
+          left: -6px;
+        }
+      }
+    }
+  }
+
+  .control{
+    &-field{
+      margin-bottom: 17px;
+      &__left{
+        .inline-block();
+        width: 105px;
+        padding-top: 6px;
+      }
+      &__right{
+        .inline-block();
+        width: 233px;
+      }
+      + .form{
+        &-field{
+          &--full{
+            padding-top: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* _inprogress & _complete */
+._inprogress {
+  position: relative;
+  padding-left: 22px;
+      &:before {
+        display: block;
+        width: 16px;
+        height: 16px;
+        content: "";
+        background: url("../img/process.png");
+        position: absolute;
+        top: 0;
+        left: -5px;
+      }  
+}
+
+._complete {
+  position: relative;
+      padding-left: 24px;
+      &:before {
+        display: block;
+        width: 13px;
+        height: 9px;
+        content: "";
+        background: url("../img/done.png");
+        position: absolute;
+        top: 3px;
+        left: -2px;
+      }
 }
