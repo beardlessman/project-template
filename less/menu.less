@@ -210,3 +210,118 @@
       }
   }
 }
+
+
+
+
+/*__Menu--varian */
+.menu--variant{
+    position: absolute;
+    right: 17.5%;
+    top: 59px;
+
+    &__list{
+        width: 100%;
+        font: bold 20px/23px Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+        text-transform: uppercase;
+        text-align: justify;
+        text-justify: newspapper;
+        &:after{
+            content: "";
+            .inline-block(top);
+            width: 100%;
+        }
+    }
+    &__item{
+        .inline-block(top);
+        position: relative;
+        &:nth-child(3){
+            margin-right: 100px;
+        }
+        &:nth-child(4){
+            margin-left: 80px;
+        }
+        &:hover {
+            .submenu {
+                opacity: 1;
+                visibility: visible;
+            }
+            .menu__link:hover {
+                color: @cBlueOver;
+            }
+        }
+    }
+    &__link{
+        color: @cBlack;
+        text-decoration: none;
+        .transition(~'color 0.3s ease');
+        
+    }
+}
+
+/* Basket */
+.basket{
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 54px;
+    color: @cBlue;
+    text-decoration: none;
+    padding: 0 0 0 38px;
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        .sprite(@s-basket);
+        left: 0;
+        top:  5px;
+    }
+
+    &--full {
+        .basket__count {
+            text-align: center;
+            font-size: 20px;
+            line-height: 34px;
+            color: @cWhite;
+            font-weight: bold;
+
+            &:before {
+                display: none;
+            }    
+        }
+        
+    }
+    &__count{
+        .inline-block();
+        position: relative;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: @cOrange;
+        margin-right: 12px;
+        &:before{
+            content: "";
+            display: block;
+            .sprite(@s-poker-face);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -5px;
+            margin-top: -5px;
+        }
+        &._empty{
+            &:before{
+                opacity: 0;
+            }
+        }
+    }
+    &__text{
+        .inline-block();
+        font-size: 16px;
+        line-height: 20px;
+    }
+    &:hover{
+        color: @cBlueOver;
+    }
+}
+/* /Basket */
