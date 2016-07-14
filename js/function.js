@@ -31,6 +31,7 @@ $(document).on('ready', function () {
     $('.j-fixed-header').each(function(){
         new FixedHeader(this);
     });
+    $('.j-gallery').colorbox({rel:'j-gallery', transition:"fade"});
 });
 
 /* Menu */

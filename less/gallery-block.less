@@ -1,0 +1,35 @@
+/* gallery block - achievements */
+.achievements {
+	&__list {
+		margin-top: 37px;
+		padding: 25px;
+	}
+	&__item {
+		position: relative;
+	    width: 241px;
+	    display: inline-block;
+	    vertical-align: top;
+	    text-decoration: none;
+	    margin: 0 40px 60px 0;
+	    &:before {
+	    	display: block;
+	    	content: "";
+	    	position: absolute;
+	    	top: 0;
+	    	left: 0;
+	    	width: 241px;
+	    	height: 343px;
+	    	background: @cBlack;
+	    	opacity: 0;
+	    	border-radius: 16px;
+	    	.transition(~'opacity .3s ease');
+	    }
+	    &:hover:before {
+	    	opacity: 0.2;
+	    }
+	}
+	&__item-img {
+		display: block;
+		border-radius: 16px;
+	}
+}
