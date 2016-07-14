@@ -20,6 +20,11 @@ $(document).on('ready', function () {
     $('.j-purchase').each(function(){
         new Purchase(this);
     });
+    $('.j-dotted').each(function () {
+        $(this).dotdotdot({
+        	height: 51
+        });
+    });
 });
 
 /* Menu */
