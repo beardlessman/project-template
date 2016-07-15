@@ -36,6 +36,9 @@ $(document).on('ready', function () {
     $('.j-product-counter').each(function(){
         new ProductCounter(this);
     });
+    $('.j-popupMenu-container').each(function(){
+        new PopupMenu(this);
+    });
 });
 
 
@@ -700,3 +703,30 @@ $(document).on('ready', function () {
 	    
 	};
 /* /Product counter */
+
+/* popup-menu */
+	PopupMenu = function(container) {
+	    this.container = $(container);
+	    this.link = this.container.find('.j-popupMenu-link');
+	    this.body = this.container.find('.j-popupMenu-body');
+	    this.body.hide();
+	    this.init();
+	};
+
+	PopupMenu.prototype.init = function() {
+	    var cmp = this;
+
+	     cmp.link.on('click', function(e) {
+	        e.preventDefault();
+	        cmp.body.toggle(200);
+	        cmp.link.toggleClass('_active');
+	    });
+
+	    $(document).on('click', function(e) {
+	        if(!$(e.target).is(cmp.body) && !$(e.target).is(cmp.link) && !$(e.target).parents().is(cmp.body) && !$(e.target).parents().is(cmp.link)) {
+	            cmp.body.hide(200);
+	            cmp.link.removeClass('_active');
+	        }
+	    });
+	};
+/* popup-menu */

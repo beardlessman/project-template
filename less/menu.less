@@ -261,6 +261,56 @@
     }
 }
 
+.submenu {
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    padding: 10px 0;
+    background-color: @cWhite;
+    border-radius: 15px;
+    box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+    z-index: 20;
+    width: 200px;
+    .transition(~'all 0.3s ease');
+    visibility: hidden;
+    opacity: 0;
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: -8px;
+        top: -8px;
+        .triangle(up, 15px, 8px, #FFF);
+    }
+    > a {
+        display: block;
+        font-size: 16px;
+        line-height: 30px;
+        color: @cGray3;
+        text-decoration: none;
+        padding: 0 20px;
+        text-transform: none;
+        font-weight: normal;
+        .transition(~'all 0.3s ease');
+        white-space: nowrap;
+        &:hover {
+            background-color: #e5f7ff;
+            color: @cBlue;
+        }
+    }
+    &--horeca {
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        top: 50px;
+        left: 50px;
+        &:before {
+            left: 172px;
+        }
+    }
+}
+
 /* Basket */
 .basket{
     display: block;
@@ -327,6 +377,8 @@
     }
 }
 /* /Basket */
+
+
 
 
 @media screen and (max-width: 1025px) {
