@@ -32,7 +32,12 @@ $(document).on('ready', function () {
         new FixedHeader(this);
     });
     $('.j-gallery').colorbox({rel:'j-gallery', transition:"fade"});
+
+    $('.j-product-counter').each(function(){
+        new ProductCounter(this);
+    });
 });
+
 
 /* Menu */
 	Menu = function (container) {
@@ -601,3 +606,97 @@ $(document).on('ready', function () {
 	    });
 	};
 /* /FixedHeader */
+
+/* Product counter */
+	function ProductCounter(container){
+	    this.container = $(container);
+	    this.default = this.container.find('.j-product-counter-default');
+	    this.input = this.container.find('.j-product-counter-input');
+	    this.ending1 = this.container.data('ending1');
+	    this.ending2 = this.container.data('ending2');
+	    this.ending3 = this.container.data('ending3');
+	    this.amount = parseFloat(this.container.data('amount'));
+	    this.value = parseInt(this.container.data('value'), 10);
+	    this.units = this.container.data('units');
+
+	    this.init();
+	};
+
+	ProductCounter.prototype.init = function(){
+	    var cmp = this;
+
+	    cmp.control = $(cmp.getHTML());
+	    cmp.decButton = cmp.control.find('.j-product-counter-dec');
+	    cmp.incButton = cmp.control.find('.j-product-counter-inc');
+	    cmp.txt = cmp.control.find('.j-product-counter-txt');
+
+	    cmp.container.append(cmp.control);
+
+	    cmp.input.val(cmp.value);
+	    if(cmp.value > 0) {
+	        cmp.default.hide();
+	        cmp.control.show();
+	        cmp.txt.text(cmp.getTxt());
+	    }
+
+
+	    cmp.default.on('click', function(e){
+	        e.preventDefault();
+	        cmp.default.hide();
+	        cmp.control.fadeIn(300);
+	        cmp.value = 1;
+	        cmp.txt.text(cmp.getTxt());
+	        cmp.input.val(cmp.value);
+	    });
+
+	    cmp.decButton.on('click', function(e){
+	        e.preventDefault();
+	        cmp.value--;
+	        cmp.input.val(cmp.value);
+	        if(cmp.value == 0) {
+	            cmp.control.hide();
+	            cmp.default.fadeIn(300);
+	        } else {
+	            cmp.txt.text(cmp.getTxt());
+	        }
+	    });
+	    cmp.incButton.on('click', function(e){
+	        e.preventDefault();
+	        cmp.value++;
+	        cmp.input.val(cmp.value);
+	        cmp.txt.text(cmp.getTxt());
+	    });
+	};
+
+	ProductCounter.prototype.getHTML = function(){
+	    var cmp = this;
+
+	    return '<span class="product-counter__helper j-product-counter-helper">' +
+	        '<span class="product-counter__dec j-product-counter-dec"></span>' +
+	        '<span class="product-counter__txt j-product-counter-txt"></span>' +
+	        '<span class="product-counter__inc j-product-counter-inc"></span>' +
+	        '</span>';
+	};
+
+	ProductCounter.prototype.getCase = function (num, ending1, ending2, ending3) {
+	    var mod100 = num % 100;
+	    var mod10 = num % 10;
+	    if (mod100 >= 5 && mod100 <= 20 || mod10 == 0 || (mod10 >= 5 && mod10 <= 9)) {
+	        return ending3;
+	    } else if (mod10 == 1) {
+	        return ending1;
+	    } else {
+	        return ending2;
+	    }
+	};
+
+	ProductCounter.prototype.getTxt = function () {
+	    var cmp = this;
+	    if (cmp.amount > 0) {
+	        return cmp.value + ' ' + cmp.getCase(cmp.value, cmp.ending1, cmp.ending2, cmp.ending3) + ' (' + (cmp.amount*cmp.value) + ' ' + cmp.units + ')';    
+	    } else {
+	        return cmp.value;
+	    }
+	    
+	};
+/* /Product counter */

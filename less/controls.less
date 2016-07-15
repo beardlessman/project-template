@@ -554,3 +554,220 @@
         left: -2px;
       }
 }
+
+
+.product-counter{
+    height: 35px;
+    display: block;
+    width: 201px;
+    border-radius: 17px;
+    background: @cOrange2;
+    position: relative;
+    .transition(~"background .3s ease");
+    &:hover{
+        background: @cOrange4;
+    }
+    &--horeca{
+        position: absolute;
+        //left: 20px;
+        left: 50%;
+        margin-left: -100px;
+        bottom: 30px;
+    }
+    &--catalog {
+        margin: 10px auto;
+    }
+    &--product-x {
+        margin-top: 24px;
+        height: 50px;
+        width: 328px;
+        border-radius: 25px;
+        .product-counter {
+            &__txt {
+                line-height: 49px;
+                font-size: 21px;
+            }    
+            &__default {
+                line-height: 49px;
+                font-size: 21px;
+            }
+            &__helper{
+                border-radius: 25px;
+            }
+            &__dec{
+                width: 40px;
+                height: 40px;
+                left: 5px;
+                top: 5px;
+                &:before{
+                    left: 12px;
+                    top: 19px;
+                }
+            }
+            &__inc{
+                width: 40px;
+                height: 40px;
+                rigth: 5px;
+                top     : 5px;
+                &:before{
+                    left: 12px;
+                    top: 19px;
+                }
+                &:after{
+                    top: 13px;
+                    left: 18px;
+                }
+            }
+        }
+        
+    }
+    &--order {
+        width: 122px;
+        border: 1px solid #dee0e2;
+        .transition(~'all 0.3s ease');
+        background: @cWhite;
+        box-sizing: border-box;
+        .product-counter__helper {
+            background-color: @cWhite;
+            color: @cGray3;
+            &:after {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 3px;
+                left: 4px;
+                width: 27px;
+                height: 27px;
+                border-radius: 50%;
+                cursor: default;
+                z-index: 5;
+                background: @cWhite;
+                opacity: 0.5;
+                visibility: hidden;
+            }
+        }
+        .product-counter__txt {
+            color: @cGray3;
+        }
+        .product-counter__dec {
+            top: 3px;
+            &:hover {
+                background-color: #ff5c23;
+            }
+        }
+        .product-counter__inc {
+            top: 3px;
+            &:hover {
+                background-color: #ff5c23;
+            }
+        }
+
+        &:hover {
+            border: 1px solid @cBlue;
+            background: @cWhite;
+            .product-counter__helper {
+                background-color: @cWhite;
+            }
+        }
+        input.j-product-counter-input[value="1"] {
+            ~ .product-counter__helper {
+                &:after {
+                    visibility: visible;
+                }
+                .product-counter__dec {
+                    &:hover {
+                        background-color: #fd8534;
+                    }
+                }
+            }
+        }
+    }
+    &__default{
+        font-size: 16px;
+        line-height: 30px;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+        color: @cWhite;
+    }
+    &__helper{
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+        background: @cOrange2;
+        border-radius: 17px;
+    }
+    &__dec{
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        background: @cOrange5;
+        left: 4px;
+        top: 4px;
+        .transition(~"background .3s ease");
+        &:hover{
+            background: @cOrange6;
+        }
+        &:before{
+            content: "";
+            display: block;
+            width: 14px;
+            height: 2px;
+            left: 6px;
+            top: 12px;
+            background: @cWhite;
+            position: absolute;
+        }
+    }
+    &__txt{
+        font-size: 16px;
+        line-height: 30px;
+        color: @cWhite;
+    }
+    &__inc{
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        background: @cOrange5;
+        right: 4px;
+        top: 4px;
+        .transition(~"background .3s ease");
+        &:hover{
+            background: @cOrange6;
+        }
+        &:before{
+            content: "";
+            display: block;
+            width: 14px;
+            height: 2px;
+            left: 6px;
+            top: 12px;
+            background: @cWhite;
+            position: absolute;
+        }
+        &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            height: 14px;
+            width: 2px;
+            top: 6px;
+            background: @cWhite;
+            left: 12px;
+        }
+    }
+}
