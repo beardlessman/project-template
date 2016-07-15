@@ -95,6 +95,97 @@
   text-decoration: none;
 }
 
+.search-form{
+    position: absolute;
+    height: 85px;
+    z-index: 6;
+    &--main{
+        top: 0;
+        right: 0;
+        width: 90px;
+    }
+    &--inner-page {
+        top: -60px;
+        right: -15px;
+        width: 50px;
+        .search-form__toggler {
+            left: 12px;
+        }
+    }
+    &__toggler{
+        position: absolute;
+        font-size: 0;
+        text-decoration: none;
+        color: @cWhite;
+        .transition(~"color .3s ease");
+        top: 32px;
+        left: 31px;
+        &:before{
+            content: @icon-search;
+            font-size: 22px;
+            .icon-font();
+            display: block;
+        }
+        &:hover{
+            color: @cMenuBord;
+        }
+    }
+    &__field-container{
+        width: 968px;
+        height: 37px;
+        position: absolute;
+        right: 15px;
+        top: 25px;
+        z-index: 4;
+        width: 100px;
+        opacity: 0;
+        visibility: hidden;
+        .transition(~"all .3s ease");
+        &._vis{
+            opacity: 1;
+            width: 968px;
+            visibility: visible;
+        }
+    }
+    &__field{
+        display: block;
+        background: @cSearchField;
+        width: 100%;
+        height: 37px;
+        box-sizing: border-box;
+        border-radius: 18px;
+        border: none;
+        box-shadow: 0 2px 5px @cSearchShadow;
+        padding-left: 30px;
+        padding-right: 70px;
+        .fontPTS(16px,24px,300);
+    }
+    &__reset{
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 38px;
+        font-size: 0;
+        text-decoration: none;
+        width: 25px;
+        height: 25px;
+        color: @cSearchReset;
+        .transition(~"color .3s ease");
+        &:before{
+            content: @icon-close;
+            font-size: 16px;
+            .icon-font();
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+        &:hover{
+            color: @cMenuBord;
+        }
+    }
+}
+
 @media screen and (min-width: 1025px) {
   .header{
     height: 150px;
