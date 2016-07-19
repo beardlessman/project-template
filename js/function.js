@@ -25,6 +25,12 @@ $(document).on('ready', function () {
         	height: 51
         });
     });
+    // Custom select
+    $('.j-select').selectik({
+        maxItems: 5,
+        smartPosition: false,
+        speedAnimation: 0
+    });
     $('.j-spoiler').each(function(){
         new Spoiler(this);
     });
